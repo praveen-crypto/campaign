@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block topbody %}
+<div class="form_details">
+    <h3> </h3>
+</div>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="user_detail" id="user_detail">
+    <div class="title">
+      <h3 class="title_name"></h3>
+    </div>
+    <div class="form-group">
+      <label for="Name">Name <span class="required">*</span></label>
+      <input type="text" class="form-control" name="Name" id="Name"  placeholder="Your Name"  required  />
+    </div>
+
+    <div class="form-group email">
+      <label for="Email">Email <span class="required">*</span></label>
+      <input
+        type="email"
+        class="form-control"
+        name="Email"
+        id="Email"
+        placeholder="Email Address"
+        required
+      />
+    </div>
+
+    <div class="form-group phone">
+      <label for="phone">Phone <span class="required">*</span></label>
+      <input
+        type="number"
+        name="phone"
+        id="phone"
+        placeholder="Phone Number"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group comapny_name">
+      <label for="comapnyname">
+          Company Name <span class="required">*</span>
+        </label>
+      <input
+        type="text"
+        class="form-control"
+        name="comapnyname"
+        id="comapnyname"
+        placeholder="Your Company Name"
+      />
+    </div>
+
+    <div class="form-group brand">
+      <label for="brand">Brand <span class="required">*</span></label>
+      <input
+        type="text"
+        class="form-control"
+        name="brand"
+        id="brand"
+        placeholder="Brand Name"
+      />
+    </div>
+
+    <div class="form-group promote">
+      <label for="promote">Where do you want to promote? <span class="required">*</span></label >
+      <select name="promote" class="form-control" id="promote">
+        <option value="Specific location">Specific location</option>
+        <option value="pincode">pin code</option>
+        <option value="Apartment Complex">‌Apartment Complex</option>
+        <option value="‌Micromarket">‌Micromarket</option>
+        <option value="City">‌City</option>
+      </select>
+      <input type="text" class="form-control" name="promote" id="promote1" />
+    </div>
+
+    <div class="form-group objective">
+      <label for="objective"
+        >What's the objective of this campaign?
+        <span class="required">*</span></label
+      >
+      <select  class="form-control" name="objective" id="objective" >
+        <option value="Quick Sales">‌Quick Sales</option>
+        <option value="Customer Acquisition">‌Customer Acquisition</option>
+        <option value="‌Brand Elevation">‌Brand Elevation</option>
+        <option value="‌Offers Promotion">‌Offers Promotion</option>
+        <option value="‌Competition Strategy">‌Competition Strategy</option>
+        <option value="Tapping a Seasonal opportunity">
+          Tapping a Seasonal opportunity
+        </option>
+        <option value="Others">Others</option>
+      </select>
+      <input type="text" class="form-control" name="objective" id="others"/>
+    </div>
+
+    <div class="form-group datepicker">
+      <label for="">
+          How long would you like to run the campaign?<span class="required">*</span>
+        </label>
+    </div>
+
+    <div class="form-group professional_content">
+      <label for="professional" >
+        Would you like us to support for the professional Content/Video
+        creations<span class="required">*</span>
+        </label>
+        <input type="checkbox" class="form-check-label" name="professional" id="professional">
+    </div>
+
+    <div class="form-group url">
+      <label for="ad_content">Enter the Content Url Below</label>
+      <input type="url" placeholder="example.com/img" class="form-control" />
+    </div>
+    <div class="form-group total-cost">
+      <table class="summary">
+        <thead>
+          <tr>
+            <td><p>WeekDays</p></td>
+            <td><p>Weekend Days</p></td>
+            <td><p>Professional Content</p></td>
+            <td><p>Total Cost</p></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p>{{weekdays}}</p></td>
+            <td><p>{{weekends}}</p></td>
+            <td><p>{{Pro_content}}</p></td>
+            <td><p>{{cost}}$</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="form-group submit-btn">
+      <button class="btn " id="submit">Submit</button>
+    </div>
+</div>
+
+
+{% endblock %}
