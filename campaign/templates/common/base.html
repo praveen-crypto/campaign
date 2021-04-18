@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for( 'static', filename='assets/logo.png' ) }}" type="image/png" sizes="10x10">
 
+    
     <!-- RESPONSIVE AND STYLE CSS -->
     <link rel="stylesheet" href = "{{ url_for( 'static', filename='css/style.css' ) }}">
     <link rel="stylesheet" href = "{{ url_for( 'static', filename='css/responsive.css' ) }}">
@@ -17,43 +18,47 @@
     <title>TEST ASSIGNMENT</title>
     
     {% block head %}
+
     {% endblock %}
 </head>
   <body>
-    <nav class="navbar navbar-expand-sm  bg-transparent">
-      <a class="navbar-brand" href="#">
-        <img class="logo" src="{{ url_for( 'static', filename='assets/logo.png' ) }}" alt="LOGO">
-      </a>     
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-sm  ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img class="logo" src="{{ url_for( 'static', filename='assets/logo.png' ) }}" alt="LOGO">
+        </a>     
         
-      <div class="collapse navbar-collapse " id="navbarNav">
-        <ul class="navbar-nav ml-auto mr">
-          <li class="nav-item {{home}} ">
-            <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item {{monitor}}">
-            <a class="nav-link" href="{{ url_for('monitor') }}">Monitor</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{campaign}}"" href="{{ url_for('campaign') }}">Start a campaign</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link {{about}}"" href="{{ url_for('about') }}">About</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link {{contact_us}}"" href="{{ url_for('contact_us') }}">Contact Us</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item" >
-            <a href="#"  ><div class="btn btn-primary">LOGIN</div></a>
-          </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav ml-auto mr">
+            <li class="nav-item {{home}} ">
+              <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item {{monitor}}">
+              <a class="nav-link" href="{{ url_for('monitor') }}">Monitor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{campaign}}"" href="{{ url_for('campaign') }}">Start a campaign</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{about}}"" href="{{ url_for('about') }}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{contact_us}}"" href="{{ url_for('contact_us') }}">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item" >
+              <a href="#"  ><div class="btn btn-primary">LOGIN</div></a>
+            </li>
+          </ul>
+        </div>
       </div>
-
+      
+      
     </nav>
 
     {% block body %}

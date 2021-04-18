@@ -28,7 +28,6 @@
 
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1280px) {
-    
     .logo{
         width:100%;
         height: auto;
@@ -37,49 +36,58 @@
     nav{
         position: relative;
         z-index: 2;
-        margin: 0.7rem auto;
     }
     .nav-item{
         margin-left:0.8rem;
         margin-right: 0.8rem;
     }
+    .mr .nav-item:hover{
+        border-bottom: 2px solid rgb(255, 255, 255);
+    }
     .nav-link{
-        color:seashell;
         text-transform: uppercase;
         font-weight: 400;
     }
+    .active{
+        border-bottom: 2px solid rgb(255, 255, 255);
+    }
+    .mr .active > .nav-link{
+        color:white;
+        font-weight: 500;
+    }
+    
     .navbar-nav  .btn{
         padding: 10px 20px;
         border:none;
-        background-color: rgb(255, 255, 255);
         font-weight: 500;
-        color:#846afe;
         transition-duration: 300ms;
     }
     .navbar-nav  .btn:hover{
         transition-duration: 300ms;
         font-weight: 500;
-        border: 1px solid rgb(255, 255, 255);
-        background-color: rgba(21, 21, 21, 0);
     }
     .mr{
         margin-right:8%;
     }
-
-    
     .landing_page{
         position:absolute;
         top:0;
         width:100vw;
-        height:100vh;
-        background-image: url('../assets/bg-landing-page.png');
+        height:100%;
+        background: url('../assets/bg-landing-page.png') center bottom no-repeat;
         background-size: cover;
-        background-repeat: no-repeat;
     }
-    
-    .landing_page_content{
+    .landing_page_content-1{
         margin-top: 10%;
-    
+        height: 60%;
+    }
+    .landing_page_content-2{
+        height: 150%;
+    }
+    .bg-icon img{
+        width:100%;
+        height: auto;
+        max-width: 600px;
     }
 
 }

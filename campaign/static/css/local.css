@@ -1,0 +1,28 @@
+nav{
+    background-color: #846afe;
+}
+nav > .container-fluid{
+    padding-top: 1rem;
+    padding-bottom:1rem;
+}
+.nav-link{
+    color: rgba(26, 26, 26, 0.671);
+}
+.navbar-nav  .btn{
+    padding: 10px 20px;
+    border:none;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    color:#846afe;
+    transition-duration: 300ms;
+}
+.navbar-nav  .btn:hover{
+    transition-duration: 300ms;
+    font-weight: 500;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(21, 21, 21, 0);
+}
+.mr{
+    margin-right:8%;
+}
+

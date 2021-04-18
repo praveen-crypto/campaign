@@ -1,0 +1,32 @@
+nav{
+    background-color:transparent;
+}
+nav > .container-fluid{
+    padding-top: 1rem;
+}
+.nav-item{
+    margin-left:0.8rem;
+    margin-right: 0.8rem;
+}
+.nav-link{
+    color:rgba(255, 255, 255, 0.801);
+}
+.nav-link:hover{
+    color:rgb(255, 255, 255);
+}
+.navbar-nav  .btn{
+    padding: 10px 20px;
+    border:none;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
+    color:#846afe;
+    transition-duration: 300ms;
+}
+.navbar-nav  .btn:hover{
+    transition-duration: 300ms;
+    font-weight: 500;
+    color:white;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(21, 21, 21, 0);
+}
+
