@@ -1,8 +1,5 @@
 /* Import Fonts */
-@font-face {
-    font-family: Abril;
-    src: url(fonts/AbrilFatface-Regular.ttf);
-}
+
 /* Main Style Start */
 :root{
     --border-color:rgb(255,255,255,0.05);
@@ -113,18 +110,75 @@
         margin-top:90%;
         background-color: rgb(253, 253, 253);
     }
-    .landing_page_content-2{
-        
-    }
-    .space-for-ads{
+    
+
+
+    .space_for_ads{
         margin-top: 0%;
        
         height: 50vh;
     }
     
 
+    /* SERVICES */
+    .our-services{
+        margin:3rem auto; 
+        padding-bottom: 4rem;               
+    }
+    .card{
+        margin-top: 2.5rem;
+        width:15rem;
+    }
+    .card-body{
+        margin-top: 1rem;
+    }
+    .card-img-top{
+        width:100%;
+        height: auto;
+        max-width:100px;
+        display: flex;
+        align-self: center;
+    }
 
+    footer{
+        overflow: hidden;
+        position: relative;
+        margin-top: 9rem;
+        width: 100%;
+    }
     
+
+    .footer-contact-us{
+        padding: 10rem 0;
+        font-family: 'Alegreya Sans SC';
+        background: #fafafa url('../assets/cloud-2.png') no-repeat bottom;
+        background-size: 100% auto;
+    }
+    .footer-contact-us-head{
+        font-family: 'Alegreya Sans SC';
+        margin: 1rem 1rem ;
+    }
+    .footer-contact-us-body{
+        margin-left: 3%;
+        font-family: 'Alegreya Sans SC';
+    }
+    .footer-column{
+        background-color: #ffffff;
+        padding:3%;
+        margin:3rem auto;
+    }
+    .footer-logo h4{
+        font-weight: 800;
+    }
+    .footer-logo-content p{
+        width: 70%;
+        font-weight: 500;
+        color:rgba(0, 0, 0, 0.5);
+        margin:1rem 0 ;
+    }
+    
+
+
 
 }
 
