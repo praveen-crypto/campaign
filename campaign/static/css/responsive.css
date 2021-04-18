@@ -69,26 +69,62 @@
     .mr{
         margin-right:8%;
     }
-    .landing_page{
+    
+    .landing_page .landing_page_content-1{
         position:absolute;
-        top:0;
-        width:100vw;
-        height:100%;
+        top:0px;
+        left: 15px;
         background: url('../assets/bg-landing-page.png') center bottom no-repeat;
-        background-size: cover;
+        background-size: cover;  
+        height: 1000px;
+        width: 100%;  
+        padding-left:3rem;
+        padding-right: 4rem;
     }
-    .landing_page_content-1{
-        margin-top: 10%;
-        height: 60%;
+
+    .heading h2{
+        margin-top: 20rem;
+        font-weight: 700;
+        font-size: 3.4rem;
+        color:white;
+        text-transform: capitalize;
     }
-    .landing_page_content-2{
-        height: 150%;
+    .heading button{
+        margin-top:3rem;
+        border-radius: 26px;
+        padding:15px 28px;
+        color:white;
+        background-image: linear-gradient(to right, #6b49ff,#7d5fff);
+        font-size: 1rem;
+    }
+    .heading .btn:hover{
+        cursor: pointer;
+        color:seashell;
     }
     .bg-icon img{
+        margin-top: 10rem;
+        padding-left:4rem;
         width:100%;
         height: auto;
-        max-width: 600px;
+        max-width: 500px;
     }
+
+    .body{
+        margin-top:90%;
+        background-color: rgb(253, 253, 253);
+    }
+    .landing_page_content-2{
+        
+    }
+    .space-for-ads{
+        margin-top: 0%;
+       
+        height: 50vh;
+    }
+    
+
+
+    
 
 }
 
