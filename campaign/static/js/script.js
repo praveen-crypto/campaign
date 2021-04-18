@@ -140,14 +140,18 @@ $("#campaign_submit").click( ( ) => {
     'professional': professional, 'totalcost':totalcost, 
     'url': url.toString(), 'contenttype': contenttype } ;
     
-    console.log(info);
+    //console.log(info);
     
     var data = { 'data': JSON.stringify(info) };
     AJAXPromise("POST", "/new_campaign", data).then( (success_data) => {
-        if ( success_data.message == 'ok'){
+        console.log("message:", success_data)
+
+        if ( success_data.message == 'OK'){
+            
             alert('success');
         }
         else {
+            console.log("message:", success_data)
             alert('DATA ALREADY PRESENT');
         }
     },(error)=>

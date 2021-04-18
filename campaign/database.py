@@ -1,43 +1,75 @@
 from campaign import app
-from campaign.db_config import host,password,port,user,database
-from flask_mysqldb import MySQL
-import MySQLdb.cursors
+from campaign.db_config import HOST,PASSWORD,PORT,USER,DATABASE
+import mysql.connector
 import json
 
-# DATABASE CONFIGURATION
-app.config['MYSQL_HOST'] = host
-app.config['MYSQL_PORT'] = port
-app.config['MYSQL_USER'] = user
-app.config['MYSQL_PASSWORD'] = password
-app.config['MYSQL_DB'] = database
-app.config['MYSQL_CHARSET'] = "utf8mb4"
+def connector():
+    try:
+        mydb = mysql.connector.connect(
+                host=HOST,
+                user=USER,
+                password=PASSWORD,
+                database=DATABASE,
+                port = PORT
+                )
+        return mydb
+    except Exception as e:
+        print(e)
+        return None
 
-mysql = MySQL(app)
 
 def fetchItem():
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute(''' SELECT * FROM userdetail ''')
-    rv = cursor.fetchall()
-    return rv
+    try:
+        connection  = connector()
+        cursor = connection.cursor()
+        cursor.execute(''' SELECT * FROM userdetail ''')
+        rv = cursor.fetchall()
+        
+        return rv
+    except Exception as e:
+        print(e)
+        return None
+    finally:
+        if connection:
+            connection.close()
+
 
 def new_campaign(data):
     try:
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        connection  = connector()
+        cursor = connection.cursor()
         columns = "username,phone,email,company_name,brand,promote,objective,start_date,end_date,total_days,procontent,total_cost,link,content_type"
-        values = ''
-        for i in range(len(data)):
-            
-            values += " '"+str(data[i])+"',"
-            #print(values)
-            #print("data type",type(data[i]))
-        values = values[:-1]
-        print(values)
-        status = cursor.execute("INSERT INTO userdetail (username,phone,email,company_name,brand,promote,objective,start_date,end_date,total_days,procontent,total_cost,link,content_type) VALUES ({})".format(values))
-        #
-        mysql.connection.commit()
-        print(status)
-        return True        
+        values=data
+        #print("values:",values)
+        sql = "insert into userdetail({}) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)".format(columns)
+        cursor.execute(sql,values)
+        connection.commit()
+
+        return True
     except Exception as e:
         print(e)
-        return False
-    
+        return None
+    finally:
+        if connection:
+            connection.close()
+
+def register(data):
+    try:
+        connection  = connector()
+        cursor = connection.cursor()
+        columns = "username,email,password,otp"
+        values = data
+        sql = "insert into userdetail({}) values(%s,%s,%s,%s)".format(columns)
+        cursor.execute(sql,values)
+        connection.commit()
+
+        return True
+    except Exception as e:
+        print(e)
+        return None
+    finally:
+        if connection:
+            connection.close()
+
+
+

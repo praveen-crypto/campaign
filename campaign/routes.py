@@ -1,12 +1,28 @@
 from campaign import app
 from flask import render_template, request, jsonify
 from campaign import views
+from campaign import mail
 
 #for testing purpose
-from campaign.database import fetchItem, new_campaign
 import json
 
+# ===============================AUTHENTICATION ROUTING 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if (request.method=="POST"):
+        return True
+    elif(request.method=="GET"):
+        return render_template('auth/login.html' )
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if (request.method=="POST"):
+        return True
+    elif(request.method=="GET"):   
+        return render_template('auth/register.html' )
+
+
+# =================================GENERAL ROUTING
 @app.route('/')
 @app.route('/home')
 def home():
@@ -21,7 +37,8 @@ def monitor():
 @app.route('/campaign')
 def campaign():
     if request.method == 'POST':
-        views.new_campaign(request)
+        res = views.new_campaign(request)
+        return res
     return render_template('common/campaign.html', campaign="active")
 
 @app.route('/about')
@@ -33,14 +50,17 @@ def contact_us():
     return render_template('common/contact_us.html', contact_us="active")
 
 
+# ===========================FOR TESTING PURPOSE
 @app.route('/test')
 def test():
     if (request.method == "POST"):
-       data = []
-       for item in json.loads(request.form.get('data')).values():
-           data.append(item)
-       rv = new_campaign(data)        
-    rv =  str(fetchItem())
-    return rv
+       rv = views.new_campaign(request)
+
+       return rv
+    else:
+        
+        rv =  mail.send()
+        print(rv)
+        return str(rv)
 
 

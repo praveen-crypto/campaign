@@ -5,145 +5,156 @@
 {% endblock %}
 
 {% block body %}
-<div class=" user_detail" id="user_detail" >
-    <div class=" title">
-      <h3 class="title_name"></h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      
     </div>
-    <div class=" form-group">
-        <label for="Name">Name <span class="required">*</span></label>
-        <input type="text" class="form-control" name="Name" id="Name"  placeholder="Your Name"  required  />      
-    </div>
-
-    <div class=" form-group email">
-      <label for="Email">Email <span class="required">*</span></label>
-      <input
-        type="email"
-        class="form-control"
-        name="Email"
-        id="Email"
-        placeholder="Email Address"
-        required
-      />
-    </div>
+    <div class="col-xs-12  col-lg-6">
+      <div class=" user_detail" id="user_detail" >
+        <div class=" title">
+          <h3 class="title_name"></h3>
+        </div>
+        <div class=" form-group">
+            <label for="Name">Name <span class="required">*</span></label>
+            <input type="text" class="form-control" name="Name" id="Name"  placeholder="Your Name"  required  />      
+        </div>
     
-    <div class=" form-group phone">
-      <label for="phone">Phone <span class="required">*</span></label>
-      <input
-        type="number"
-        name="phone"
-        id="phone"
-        placeholder="Phone Number"
-        class="form-control"
-      />
-    </div>
-
-    <div class=" form-group comapny_name">
-      <label for="comapnyname">
-          Company Name <span class="required">*</span>
-        </label>
-      <input
-        type="text"
-        class="form-control"
-        name="comapnyname"
-        id="comapnyname"
-        placeholder="Your Company Name"
-      />
-    </div>
-
-    <div class=" form-group brand">
-      <label for="brand">Brand <span class="required">*</span></label>
-      <input
-        type="text"
-        class="form-control"
-        name="brand"
-        id="brand"
-        placeholder="Brand Name"
-      />
-    </div>
-
-    <div class=" form-group promote">
-      <label for="promote">Where do you want to promote? <span class="required">*</span></label >
-      <select name="promote" class="form-control" id="promote">
-        <option value="Specific location">Specific location</option>
-        <option value="pincode">pin code</option>
-        <option value="Apartment Complex">‌Apartment Complex</option>
-        <option value="‌Micromarket">‌Micromarket</option>
-        <option value="City">‌City</option>
-      </select>
-      <input type="text" class="form-control" name="promote" id="promote1" />
-    </div>
-
-    <div class=" form-group objective">
-      <label for="objective"
-        >What's the objective of this campaign?
-        <span class="required">*</span></label>
-      <select  class="form-control" name="objective" id="objective" >
-        <option value="Quick Sales">‌Quick Sales</option>
-        <option value="Customer Acquisition">‌Customer Acquisition</option>
-        <option value="‌Brand Elevation">‌Brand Elevation</option>
-        <option value="‌Offers Promotion">‌Offers Promotion</option>
-        <option value="‌Competition Strategy">‌Competition Strategy</option>
-        <option value="Tapping a Seasonal opportunity">
-          Tapping a Seasonal opportunity
-        </option>
-        <option value="Others">Others</option>
-      </select>
-      <input type="text" class="form-control" name="objective" id="objective_others"/>
-    </div>
-
-    <div class=" form-group datepicker">
-      <label for="datepicker">
-          How long would you like to run the campaign?<span class="required">*</span>
-        </label>
-        <div class="row">
-          <div class="col">
-            <p>From</p> <input type="date" name="datepicker" class="calendar" id="from_date">
+        <div class=" form-group email">
+          <label for="Email">Email <span class="required">*</span></label>
+          <input
+            type="email"
+            class="form-control"
+            name="Email"
+            id="Email"
+            placeholder="Email Address"
+            required
+          />
+        </div>
+        
+        <div class=" form-group phone">
+          <label for="phone">Phone <span class="required">*</span></label>
+          <input
+            type="number"
+            name="phone"
+            id="phone"
+            placeholder="Phone Number"
+            class="form-control"
+          />
+        </div>
+    
+        <div class=" form-group comapny_name">
+          <label for="comapnyname">
+              Company Name <span class="required">*</span>
+            </label>
+          <input
+            type="text"
+            class="form-control"
+            name="comapnyname"
+            id="comapnyname"
+            placeholder="Your Company Name"
+          />
+        </div>
+    
+        <div class=" form-group brand">
+          <label for="brand">Brand <span class="required">*</span></label>
+          <input
+            type="text"
+            class="form-control"
+            name="brand"
+            id="brand"
+            placeholder="Brand Name"
+          />
+        </div>
+    
+        <div class=" form-group promote">
+          <label for="promote">Where do you want to promote? <span class="required">*</span></label >
+          <select name="promote" class="form-control" id="promote">
+            <option value="Specific location">Specific location</option>
+            <option value="pincode">pin code</option>
+            <option value="Apartment Complex">‌Apartment Complex</option>
+            <option value="‌Micromarket">‌Micromarket</option>
+            <option value="City">‌City</option>
+          </select>
+          <input type="text" class="form-control" name="promote" id="promote1" />
+        </div>
+    
+        <div class=" form-group objective">
+          <label for="objective"
+            >What's the objective of this campaign?
+            <span class="required">*</span></label>
+          <select  class="form-control" name="objective" id="objective" >
+            <option value="Quick Sales">‌Quick Sales</option>
+            <option value="Customer Acquisition">‌Customer Acquisition</option>
+            <option value="‌Brand Elevation">‌Brand Elevation</option>
+            <option value="‌Offers Promotion">‌Offers Promotion</option>
+            <option value="‌Competition Strategy">‌Competition Strategy</option>
+            <option value="Tapping a Seasonal opportunity">
+              Tapping a Seasonal opportunity
+            </option>
+            <option value="Others">Others</option>
+          </select>
+          <input type="text" class="form-control" name="objective" id="objective_others"/>
+        </div>
+    
+        <div class=" form-group datepicker">
+          <label for="datepicker">
+              How long would you like to run the campaign?<span class="required">*</span>
+            </label>
+            <div class="row">
+              <div class="col">
+                <p>From</p> <input type="date" name="datepicker" class="calendar" id="from_date">
+              </div>
+              <div class="col">
+                <p>To</p> <input type="date" name="datepicker" class="calendar" id="to_date">
+              </div>
+            </div>
+        </div>
+    
+        <div class="form-group professional_content pt-5">
+          <div class="row">
+            <div class="col-12">
+              <label for="professional" >
+                Support for professional content creations<span class="required">*</span>
+              </label>        
+              <input type="checkbox" class="form-check-label" name="professional" id="professional">
+            </div>
           </div>
-          <div class="col">
-            <p>To</p> <input type="date" name="datepicker" class="calendar" id="to_date">
-          </div>
+        </div>
+    
+        <div class="form-group url">
+          <label for="ad_content">Enter the Content Url Below</label>
+          <input type="url" placeholder="example.com/img" id ="url" class="form-control" />
+        </div>
+    
+        <div class="form-group total-cost text-center p-2 border">
+          <table class="summary">
+            <thead>
+              <tr>
+                <td><p>WeekDays</p></td>
+                <td><p>Weekend Days</p></td>
+                <td><p>Professional Content</p></td>
+                <td><p>Total Cost</p></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><p>{{weekdays}}</p></td>
+                <td><p>{{weekends}}</p></td>
+                <td><p>{{Pro_content}}</p></td>
+                <td><p>{{cost}}$</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="form-group submit-btn text-right">
+          <button class="btn btn-secondary " id="campaign_submit">Submit</button>
         </div>
     </div>
 
-    <div class="form-group professional_content pt-5">
-      <div class="row">
-        <div class="col-12">
-          <label for="professional" >
-            Support for professional content creations<span class="required">*</span>
-          </label>        
-          <input type="checkbox" class="form-check-label" name="professional" id="professional">
-        </div>
-      </div>
     </div>
-
-    <div class="form-group url">
-      <label for="ad_content">Enter the Content Url Below</label>
-      <input type="url" placeholder="example.com/img" id ="url" class="form-control" />
-    </div>
-
-    <div class="form-group total-cost text-center p-2 border">
-      <table class="summary">
-        <thead>
-          <tr>
-            <td><p>WeekDays</p></td>
-            <td><p>Weekend Days</p></td>
-            <td><p>Professional Content</p></td>
-            <td><p>Total Cost</p></td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><p>{{weekdays}}</p></td>
-            <td><p>{{weekends}}</p></td>
-            <td><p>{{Pro_content}}</p></td>
-            <td><p>{{cost}}$</p></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="form-group submit-btn text-right">
-      <button class="btn btn-secondary " id="campaign_submit">Submit</button>
-    </div>
+  </div>
 </div>
+
 {% endblock %}
 

@@ -1,24 +1,27 @@
-from flask import Flask, render_template, url_for
+from email.mime.text import MIMEText
+import smtplib
 
-from flask_mysqldb import MySQL
+def send_mail(to_email,message):
+    from_email='theparttimewriters@gmail.com'
+    msg = MIMEText(message)
+    #msg.set_unixfrom('author')
+    msg['To'] =  to_email
+    msg['From'] = from_email
+    msg['Subject'] = 'Verification'
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    print('reached1')
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
+    print('reached2')
+    server.login(from_email, 'the_parttime_writers')
+    server.sendmail(from_email,to_email,msg.as_string())
+    print('reached3')
+    server.quit()
 
-app = Flask(__name__)
+    print('successfully sent the mail.')
 
-app.config['MYSQL_HOST'] = ""
-app.config['MYSQL_PORT'] = ""
-app.config['MYSQL_USER'] = "praveen"
-app.config['MYSQL_PASSWORD'] = "1234"
-app.config['MYSQL_DB'] = "campaign"
-app.config['MYSQL_CHARSET'] = ""
 
-mysql = MySQL(app)
+send_mail('kumarspraveen57@gmail.com', 'This is a Test Message.')
 
-@app.route("/")
-def fetchItem():
-    cur = mysql.connection.cursor()
-    cur.execute('''SELECT * FROM userdetail''')
-    rv = cur.fetchall()
-    return str(rv[0])
 
-if __name__ == "__main__":
-    app.run(debug=True)

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <!-- RESPONSIVE AND STYLE CSS -->
+    <link rel="stylesheet" href = "{{ url_for( 'static', filename='css/style.css' ) }}">
+    <link rel="stylesheet" href = "{{ url_for( 'static', filename='css/responsive.css' ) }}">
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <title>Login</title>
+    
+  </head>
+
+  <body>
+    <div class="container-fluid " >
+      
+      <div class="row title" id="title">
+
+        <div class="col">
+            <h2>HOSTEL PORTAL</h2>
+        </div>
+
+      </div>
+      
+      <div class="row ">
+        
+        <div class="col"></div>
+        <div class="col-6 middle-section " >
+
+          <div class="row " >
+            <div class="col "></div>
+
+            <div class="col Login">
+              <div  class="row m-4">
+                <div class="col login-title"> 
+                  <h4>Account Login</h4> 
+                </div>
+              </div>
+
+              <div class="row ">
+                <div class="col email-outer">
+                  
+                  <input type="text" id="login-email" name="" value="" placeholder="E-mail">
+                </div>
+              </div>
+
+              <div class="row ">
+                <div class="col password-outer">
+                  <input type="password" id="login-password" name="" value="" placeholder="Password">
+                </div>
+              </div> 
+              <p id="loginfailed" > Incorrect E-mail ID or Password </p>
+
+
+              <div class="row">
+                <div class="col btn-outer">
+                  <input class="btn" type="button" id="submit" value="LOGIN" placeholder="LOGIN">    
+                </div>
+              </div>
+
+               
+                
+              
+              
+            </div>
+            
+            <div class="col"></div>
+          </div>
+          
+          <div class="row" >
+            <div class="col text-center admission">
+              <a href="admission/">
+                <span class="btn btn-dark">New Admission</span>
+              </a>            
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="col"></div>
+      </div>
+    </div>
+    
+
+  </body>
+</html>

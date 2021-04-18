@@ -1,6 +1,6 @@
 
-host = "localhost"
-user = "root"
-database = "campaign"
-port = ""
-password = "No"
+HOST = "localhost"
+USER = "root"
+DATABASE = "campaign"
+PORT = 3306
+PASSWORD = ""
