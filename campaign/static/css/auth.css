@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+.login{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-outer{
+    width: 25vw;
+    height: 45vh;
+    background-color: rgb(150, 125, 255);
+    border:1px solid rgba(0, 0, 0, 0.1);
+    color:rgba(245, 245, 245, 0.9);
+    border-radius:5px;
+}
+
+.login-heading h4{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:1.5rem auto;
+    color:rgba(245, 245, 245, 0.9);
+}
+
+.login-credentials .email,
+.login-credentials .password{
+    margin:1rem auto;  
+}
+.username input,
+.email input,
+.password input{
+    width: 80%;
+    padding:5px;
+    border:none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-radius: 0;
+    background-color: rgb(150, 125, 255);
+    color:rgba(255, 255, 255, 0.8);
+}
+.username input:focus,
+.email input:focus,
+.password input:focus{
+    transition-duration: 300ms;
+    border-bottom:1px solid rgba(35, 0, 192, 0.6);
+}
+
+.username input::placeholder,
+.email input::placeholder,
+.password input::placeholder{
+    color:rgba(245, 245, 245, 0.5);
+}
+
+.login-btn{
+    margin:1rem auto;
+    padding:2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.login-btn .sign_up{
+    text-decoration: none;
+    padding-top: 0.5rem;
+    font-size: 0.9rem;
+    color:rgba(255, 255, 255, 0.8);
+}
+.login-btn .btn{
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.9);
+    color:rgb(150, 125, 255);
+}
+.login-btn .btn:hover{
+    border:1px solid rgba(255, 255, 255, 0.8);
+    background-color: rgb(150, 125, 255);
+    color:rgba(255, 255, 255, 0.8);
+}

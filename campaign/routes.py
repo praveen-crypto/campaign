@@ -1,25 +1,42 @@
 from campaign import app
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify,  redirect, url_for, session
 from campaign import views
 from campaign import mail
 
 #for testing purpose
 import json
 
-# ===============================AUTHENTICATION ROUTING 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if (request.method=="POST"):
-        return True
-    elif(request.method=="GET"):
-        return render_template('auth/login.html' )
+app.secret_key = b't4\xbb\x96\xdf\x1d\x7fni\xa1dT\xe0h\x0e\x8a'
 
-@app.route('/register', methods=['GET', 'POST'])
+
+# ===============================AUTHENTICATION ROUTING 
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+    if (request.method=="POST"):
+        res = views.signin(request)
+        if res:
+            userid = session['id']
+            return render_template('common/monitor.html', monitor="active", userid = userid)
+        return res
+    elif(request.method=="GET"):
+        if session['id'] == '':
+            print("session id1:",session['id'])
+            return render_template('auth/sign_in.html' )
+        else:
+            print("session id2:",session['id'])
+            return render_template('common/monitor.html', monitor="active")
+
+
+@app.route('/signup', methods=['GET', 'POST'])
 def register():
     if (request.method=="POST"):
         return True
     elif(request.method=="GET"):   
-        return render_template('auth/register.html' )
+        return render_template('auth/sign_up.html' )
+
+
+
+
 
 
 # =================================GENERAL ROUTING
@@ -27,7 +44,8 @@ def register():
 @app.route('/home')
 def home():
     
-    return render_template('common/landing_page.html', home="active" )
+    return render_template('common/landing_page.html', home="active")
+
 
 @app.route('/monitor')
 def monitor():
@@ -58,7 +76,7 @@ def test():
 
        return rv
     else:
-        
+
         rv =  mail.send()
         print(rv)
         return str(rv)

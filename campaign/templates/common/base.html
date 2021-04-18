@@ -56,7 +56,11 @@
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item" >
-              <a href="#"  ><div class="btn btn-primary">LOGIN</div></a>
+              {% if session['id'] == '' %}
+              <a href="{{ url_for('signin') }}"  ><div class="btn btn-primary">SIGN IN</div></a>
+              {% else %}
+              <a href="{{ url_for('signin') }}"  ><div class="btn btn-primary">SIGN OUT</div></a>
+              {% endif %}
             </li>
           </ul>
         </div>

@@ -53,6 +53,29 @@ def new_campaign(data):
         if connection:
             connection.close()
 
+
+def signin(data):
+    try:
+        connection  = connector()
+        cursor = connection.cursor()
+        columns = "email,password"
+        values=data
+        print("Entered Credentials:",values)
+        #'SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password)
+        sql = "SELECT * FROM userdetail WHERE email = %s AND password = %s"
+        cursor.execute(sql,values)
+        res = cursor.fetchone()
+        connection.commit()
+        return res
+    except Exception as e:
+        print(e)
+        return False
+    finally:
+        if connection:
+            connection.close()
+
+
+
 def register(data):
     try:
         connection  = connector()

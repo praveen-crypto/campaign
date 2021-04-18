@@ -100,6 +100,49 @@ function AJAXPromise(method, URL) {
 }
 
 
+
+//      AUTHENTICATION API'S
+$('#signin_submit').click( () => {
+    
+    let email = $('#signin_email').val();
+    let password = $('#signin_password').val();
+    
+    if (email == undefined || password == undefined){
+        window.alert('Enter all credentials!!');
+    }
+    
+    let info = { 'email':email,'password':password }
+    var data = { 'data': JSON.stringify(info) };
+
+    console.log(data);
+    AJAXPromise("POST", "/signin", data).then( (success_data) => {
+        console.log("message:", success_data)
+        if ( success_data.message == 'OK'){
+            
+            alert('success');
+        }
+        else {
+            console.log("message:", success_data)
+            alert('DATA ALREADY PRESENT');
+        }
+    },(error)=>
+    {
+      alert(JSON.stringify(error["responseJSON"],null, 1));
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 //FUNCTION FOR CREATING NEW CAMPAIGN
 $("#campaign_submit").click( ( ) => {
     let mailid   = $('#Email').val();
@@ -131,7 +174,7 @@ $("#campaign_submit").click( ( ) => {
         start_date == "" || end_date == ""
         ) {
         alert('Please Fill All Details');
-        }
+    }
     
     let info = { 'name': name,'phone': phone,'email': mailid, 
     'comapnyname' : comapnyname, 'brand': brand,
