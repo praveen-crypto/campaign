@@ -20,13 +20,15 @@
     </div>
 
     <div class="body">
-        {% for link in links %}
-        <div class="row space_for_ads ">
-            <div class="col-4 ">
+        
+        <div class="row  ">
+            {% for link in links %}
+            <div class="col-6 space_for_ads">
                 <iframe src="{{link}}" autoplay> </iframe>                
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        
 
 
         <div class="row landing_page_content-3 our_services">

@@ -250,8 +250,9 @@ $("#campaign_submit").click( ( ) => {
         console.log("message:", success_data)
 
         if ( success_data.message == 'OK'){
-            
             alert('success');
+            window.location.replace('/campaign')
+            
         }
         else {
             console.log("message:", success_data)
