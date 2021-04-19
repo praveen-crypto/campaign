@@ -11,13 +11,12 @@ app.config.update(dict(
     MAIL_PASSWORD = 'the_parttime_writers',
 ))
 
-
 mail = Mail(app)
 
-def send(otp):
+def send(recipient, otp):
     try:
         sender=("OTP Verification", "theparttimewriters@gmail.com")
-        msg = Message("Testing for OTP Verification", sender=sender, recipients=["kumarspraveen57@gmail.com"])
+        msg = Message("Testing for OTP Verification", sender=sender, recipients=[recipient])
         msg.body = otp
         mail.send(msg)
         return True

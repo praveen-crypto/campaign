@@ -14,9 +14,15 @@ $('#objective').change( ()=>{
 
 $("#professional").change( () => {
     if($('#professional').prop('checked')) {
+        $('#procontent').text("YES")
         $('#url').prop( "disabled", true );
+        totalcost = parseInt($('#totalcost').val())+300
+        $('#totalcost').text(totalcost.toString());
     } else {
         $('#url').prop( "disabled", false );
+        $('#procontent').text("NO")
+        totalcost = parseInt($('#totalcost').val())-300
+        $('#totalcost').text(totalcost.toString());
     }
 });
 
@@ -31,7 +37,7 @@ $('.calendar').change( () => {
 
         console.log(startDate);
         console.log(endDate);
-
+        
         let diffTime = Math.abs(startDate-endDate)
         let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         let week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -52,8 +58,19 @@ $('.calendar').change( () => {
         }
         let weekdays =  days[1] + days[2] + days[3] + days[4]
         let weekend = days[0] + days[5] +days [6]
-        totalcost = weekdays*100 + weekend*150;
-        
+        var totalcost = weekdays*100 + weekend*150;
+        $('#weekdays').text(weekdays.toString())
+        $('#weekend_days').text(weekend.toString())
+
+        if($('#professional').prop('checked')) {
+            console.log("totalcost",totalcost);
+            totalcost = totalcost+300
+            $('#totalcost').text(totalcost.toString());
+        } else {
+            totalcost = totalcost-300
+            $('#totalcost').text(totalcost.toString());
+        }
+
     }   
 });
 
@@ -101,7 +118,7 @@ function AJAXPromise(method, URL) {
 
 
 
-//      AUTHENTICATION API'S
+//  ------------------ AUTHENTICATION API'S
 $('#signin_submit').click( () => {
     
     let email = $('#signin_email').val();
@@ -114,21 +131,66 @@ $('#signin_submit').click( () => {
     let info = { 'email':email,'password':password }
     var data = { 'data': JSON.stringify(info) };
 
-    console.log(data);
+    
     AJAXPromise("POST", "/signin", data).then( (success_data) => {
         console.log("message:", success_data)
-        if ( success_data.message == 'OK'){
-            
-            alert('success');
+        if ( success_data[0] == 'OK'){
+            window.location.replace('/home')
         }
         else {
             console.log("message:", success_data)
-            alert('DATA ALREADY PRESENT');
+            alert('Incorrect Email or Password');
         }
     },(error)=>
     {
       alert(JSON.stringify(error["responseJSON"],null, 1));
     });
+});
+
+$('#signup_submit').click( () => {
+    let username = $('#signup_username').val();
+    let email =  $('#signup_email').val();
+    let password = $('#signup_password').val();
+    
+    console.log(username,email,password);
+
+    if (username == '' || email == '' || password == ''){
+        window.alert('Enter all credentials!!');
+    }
+    
+    let info = { 'username':username, 'email':email, 'password':password }
+    var data = { 'data': JSON.stringify(info) };
+
+    console.log(data);
+
+    AJAXPromise("POST", "/verify_email", data).then( (success_data) => {
+        if ( success_data.message == 'OK'){
+            alert('success');
+            window.location.href('/verify_otp')
+        }
+        else {
+            console.log("message:", success_data);
+            alert('FAILED');
+        }
+    },(error)=>
+    {
+      alert(JSON.stringify(error["responseJSON"],null, 1));
+    });
+    
+    //AJAXPromise("POST", "/signup", data).then( (success_data) => {
+    //    console.log("message:", success_data)
+    //    if ( success_data[0] == 'OK'){
+    //        alert('');
+    //        window.location.replace('/signin')
+    //    }
+    //    else {
+    //        console.log("message:", success_data)
+    //        alert('Incorrect Email or Password');
+    //    }
+    //},(error)=>
+    //{
+    //  alert(JSON.stringify(error["responseJSON"],null, 1));
+    //});
 });
 
 
@@ -141,9 +203,7 @@ $('#signin_submit').click( () => {
 
 
 
-
-
-//FUNCTION FOR CREATING NEW CAMPAIGN
+//---------------------FUNCTION FOR CREATING NEW CAMPAIGN
 $("#campaign_submit").click( ( ) => {
     let mailid   = $('#Email').val();
     let name         =  $('#Name').val();

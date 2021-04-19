@@ -1,45 +1,64 @@
+
 @media only screen and (min-width : 360px){
-nav{
-    background-image: linear-gradient(to bottom, #743ff9, #9166f5);
-}
-.navbar-nav{
-    margin-top: 1rem;
-}
-.navbar-nav  .btn{
-    padding: 7px 16px;
-    border:none;
-    background-color: rgb(255, 255, 255);
-    font-weight: 500;
-    color:#846afe;
-    transition-duration: 300ms;
-}
-.mr{
-    margin-right:8%;
-}
-.nav-link{
-    color: rgba(255, 255, 255, 0.6);
-}
-.nav-link:hover{
-    color: rgba(255, 255, 255, 0.6);
-}
-.sec2{
-    border-top:1px solid rgba(255, 255, 255, 0.3)
-}
+    .logo{
+        width:100%;
+        height: auto;
+        max-width: 50px;
+    }
+    nav{
+        background-image: linear-gradient(to bottom, #743ff9, #9166f5);
+        position: relative;
+        z-index: 2;
+    }
+    nav > .container-fluid{
+        padding-top: 0rem;
+    }
+    .navbar-nav{
+        margin-top: 1rem;
+    }
+    .nav-item{
+        margin-left:0.8rem;
+        margin-right: 0.8rem;
+    }
+    .navbar-nav  .btn{
+        padding: 7px 16px;
+        border:none;
+        background-color: rgb(255, 255, 255);
+        font-weight: 500;
+        color:#846afe;
+        transition-duration: 300ms;
+    }
+    .mr{
+        margin-right:8%;
+    }
+    .nav-link,
+    .nav-link:hover{
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .sec2{
+        border-top:1px solid rgba(255, 255, 255, 0.3)
+    }
 }
 
 
 @media only screen and (min-width : 1024px){
+
     nav{
         background-image: linear-gradient(to bottom, #743ff9, #9166f5);
     }
-    nav > .container-fluid{
-        padding-top: 1rem;
-        padding-bottom:1rem;
+    .nav-item{
+        margin-left:0.8rem;
+        margin-right: 0.8rem;
+    }
+    .navbar .container-fluid{
+        padding-top:0.5rem;
     }
     .navbar-nav{
         margin-top: 0rem;
     }
     .nav-link{
+        text-transform: uppercase;
+        font-weight: 400;
         color: rgba(255, 255, 255, 0.6);
     }
     .nav-link:hover{
@@ -62,8 +81,18 @@ nav{
     .mr{
         margin-right:8%;
     }
+    .mr .nav-item:hover{
+        border-bottom: 2px solid rgb(255, 255, 255);
+    }
+    .active{
+        border-bottom: 2px solid rgb(255, 255, 255);
+    }
+    .mr .active > .nav-link{
+        color:white;
+        font-weight: 500;
+    }
     .sec2{
-        border-top:none;
+        border:none;
     }
 
 }

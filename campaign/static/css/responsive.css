@@ -1,3 +1,10 @@
+/* GLOBAL STYLE */
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
 /* Import Fonts */
 
 /* Main Style Start */
@@ -8,14 +15,19 @@
     --navbar: background-image: linear-gradient(to bottom, #743ff9, #9166f5);
 }
 
-/* Smartphones (portrait) ----------- */
-@media only screen and (min-width : 360px) and (orientation: portrait) {
+
+
+
+
+/* Small Smartphones (portrait) ----------- */
+@media only screen and (min-width : 320px) and (orientation: portrait) {
     .landing_page_content-1 h2{
         width:80vw;
         padding:0;
         margin-top:12rem;
-        margin-left:-1rem;
-        font-size: 2rem;
+        margin-left:0rem;
+        font-size: 1.6rem;
+        text-transform: capitalize;
     }
     .bg-icon{
         display: none;
@@ -23,17 +35,17 @@
     .landing_page .landing_page_content-1{
         position:absolute;
         top:0px;
-        left: 15px;
+        left:15px;
         background: url('../assets/bg-landing-page.png') center bottom no-repeat;
         background-size: cover;  
-        height: 700px;
+        height: 800px;
         width: 100%;  
         color:white;
         
     }
     .heading button{
         margin-top:3rem;
-        margin-left:-1rem;
+        
         border-radius: 26px;
         width:40vw;
         color:white;
@@ -83,24 +95,248 @@
 
 
     /*CAMPAIGN STYLE*/
-.instructions-container{
-    border:1px solid rgba(0, 0, 0, 0.1);
-    margin:2rem 0;
-    padding: 0.5rem;
+    .instructions-container{
+        border:1px solid rgba(0, 0, 0, 0.1);
+        margin:2rem 0;
+        padding: 0.5rem;
+    }
+    .instructions-container h5{
+        margin:1rem auto;
+    }
+    .instructions-container ul{
+        width:100%;
+        margin-left: 1rem;
+        padding:0.5rem;
+        font-size: 0.8rem;
+    }
+
+    /*FOOTER STYLE FOR MOBILE*/
+     footer{
+        overflow: hidden;
+        position: relative;
+        margin-top: 9rem;
+        width: 100%;
+    }
+    .footer-contact-us{
+        padding: 5rem 0;
+        font-family: 'Alegreya Sans SC';
+        background: #fafafa ;
+    }
+    .footer-contact-us-head{
+        font-family: 'Alegreya Sans SC';
+
+    }
+    .footer-contact-us-body{
+        font-family: 'Alegreya Sans SC';
+    }
+    .footer-column{
+        background-color: #ffffff;
+        padding:3%;
+        margin:3rem auto;
+    }
+    .footer-logo h4{
+        font-weight: 800;
+    }
+    .footer-logo-content p{
+        width: 90%;
+        font-weight: 500;
+        color:rgba(0, 0, 0, 0.5);
+        text-align: justify;
+        margin:1rem 0;
+    }
+    .footer-column-head h4{
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin:1rem auto;
+    }
+    .footer-column-body{
+        font-family:'Allerta';
+        margin-top: 0.3rem;
+    }
+    .footer-column-body li{
+        list-style-type: none;
+        margin:0.3rem auto;
+    }
+    ul li > a{
+        color: rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+    }
+    ul li > a:hover{
+        color: rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+        border:none;
+    }
+    .submit-btn #campaign_submit{
+        background-image: linear-gradient(to right, #6b49ff,#7d5fff);
+        border-radius: 0;
+
+    }
+    .submit-btn #campaign_submit:hover{
+        background-image: linear-gradient(to left, #6b49ff,#7d5fff);
+        border-radius: 0;
+                
+    }
+
+
 }
-.instructions-container h5{
-    margin:1rem auto;
-}
-.instructions-container ul{
-    width:100%;
-    margin-left: 1rem;
-    padding:0.5rem;
-    font-size: 0.8rem;
-}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width : 360px) and (orientation: portrait) {
+    
+    .landing_page_content-1 h2{
+        width:80vw;
+        padding:0;
+        margin-top:12rem;
+        margin-left:1rem;
+        font-size: 2rem;
+        text-transform: capitalize;
+    }
+    .bg-icon{
+        display: none;
+    }
+    .landing_page .landing_page_content-1{
+        position:absolute;
+        top:0px;
+        left: 15px;
+        background: url('../assets/bg-landing-page.png') center bottom no-repeat;
+        background-size: cover;  
+        height: 700px;
+        width: 100%;  
+        color:white;
+        
+    }
+    .heading button{
+        margin-top:3rem;
+        margin-left:1rem;
+        border-radius: 26px;
+        width:40vw;
+        color:white;
+        background-image: linear-gradient(to right, #6b49ff,#7d5fff);
+        font-size: 1rem;
+    }
+    .body{
+        margin-top:45rem;
+        
+    }
+    
+
+    /* SERVICES */
+    .our-services{
+        margin:3rem auto; 
+        padding-bottom: 4rem;               
+    }
+    .our-services-head{
+        width: 100%;
+    }
+    .our-services-head h4{
+        width: 100%;
+        font-size: 1.4rem;
+    }
+    .card{
+        margin-top: 2.5rem;
+        padding:0rem 5rem;
+    }
+    .card-body{
+        margin-top: 1rem;
+    }
+    .card-text{
+        text-align: justify;
+    }
+    .card-img-top{
+        width:100%;
+        height: auto;
+        max-width:100px;
+        display: flex;
+        align-self: center;
+    }
+    .card .btn{
+        background-color:transparent;
+        color:rgba(128, 128, 128, 0.7);
+        border:none;
+
+    }
+    .card .btn:active{
+        background-color:transparent;
+        color:rgba(128, 128, 128, 0.7);
+        border:none;
+    }
 
 
 
+    /*CAMPAIGN STYLE*/
+    .instructions-container{
+        border:1px solid rgba(0, 0, 0, 0.1);
+        margin:2rem 0;
+        padding: 0.5rem;
+    }
+    .instructions-container h5{
+        margin:1rem auto;
+    }
+    .instructions-container ul{
+        width:100%;
+        margin-left: 1rem;
+        padding:0.5rem;
+        font-size: 0.8rem;
+    }
 
+    /*FOOTER STYLE FOR MOBILE*/
+     footer{
+        overflow: hidden;
+        position: relative;
+        margin-top: 9rem;
+        width: 100%;
+    }
+    .footer-contact-us{
+        padding: 5rem 0;
+        font-family: 'Alegreya Sans SC';
+        background: #fafafa ;
+    }
+    .footer-contact-us-head{
+        font-family: 'Alegreya Sans SC';
+
+    }
+    .footer-contact-us-body{
+        font-family: 'Alegreya Sans SC';
+    }
+    .footer-column{
+        background-color: #ffffff;
+        padding:3%;
+        margin:3rem auto;
+    }
+    .footer-logo h4{
+        font-weight: 800;
+    }
+    .footer-logo-content p{
+        width: 90%;
+        font-weight: 500;
+        color:rgba(0, 0, 0, 0.5);
+        text-align: justify;
+        margin:1rem 0;
+    }
+    .footer-column-head h4{
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin:1rem auto;
+    }
+    .footer-column-body{
+        font-family:'Allerta';
+        margin-top: 0.3rem;
+    }
+    .footer-column-body li{
+        list-style-type: none;
+        margin:0.3rem auto;
+    }
+    ul li > a{
+        color: rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+    }
+    ul li > a:hover{
+        color: rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+        border:none;
+    }
 }
 
 @media only screen and (min-width : 420px) and (orientation: portrait) {
@@ -115,49 +351,13 @@
 }
 
 @media only screen  and (min-width : 1024px) {
-    .logo{
-        width:100%;
-        height: auto;
-        max-width: 70px;
-    }
-    nav{
-        position: relative;
-        z-index: 2;
-    }
-    .nav-item{
-        margin-left:0.8rem;
-        margin-right: 0.8rem;
-    }
-    .mr .nav-item:hover{
-        border-bottom: 2px solid rgb(255, 255, 255);
-    }
-    .nav-link{
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-    .active{
-        border-bottom: 2px solid rgb(255, 255, 255);
-    }
-    .mr .active > .nav-link{
-        color:white;
-        font-weight: 500;
-    }
     
-    .navbar-nav  .btn{
-        padding: 10px 20px;
-        border:none;
-        font-weight: 500;
-        transition-duration: 300ms;
-    }
-    .navbar-nav  .btn:hover{
-        transition-duration: 300ms;
-        font-weight: 500;
-    }
-    .mr{
-        margin-right:8%;
-    }
     .bg-icon{
         display: block;
+    }
+    iframe{
+        width: 550px;
+        height: 350px;
     }
     .landing_page .landing_page_content-1{
         position:absolute;
@@ -172,9 +372,9 @@
     }
 
     .heading h2{
-        margin-top: 20rem;
+        margin-top: 17rem;
         font-weight: 700;
-        font-size: 3.4rem;
+        font-size: 2.6rem;
         color:white;
         text-transform: capitalize;
     }
@@ -226,6 +426,33 @@
         display: flex;
         align-self: center;
     }
+
+    /*CAMPAIGN STYLE*/
+    .instructions-container{
+        border:1px solid rgba(0, 0, 0, 0.1);
+        margin:2rem 0em;
+        padding: 0.8em ;
+    }
+    .instructions-container h5{
+        margin:1rem auto;
+    }
+    .instructions-container ul{
+        width:100%;
+        margin-left: 1rem;
+        padding:0.7rem;
+        font-size: 0.9rem;
+    }
+
+
+    .user_detail{
+        border:1px solid rgba(0, 0, 0, 0.1);
+        padding:1rem;
+        margin:1rem 0;
+    }
+
+
+
+
 
     footer{
         overflow: hidden;
@@ -303,37 +530,9 @@
         position: relative;
         z-index: 2;
     }
-    .nav-item{
-        margin-left:0.8rem;
-        margin-right: 0.8rem;
-    }
-    .mr .nav-item:hover{
-        border-bottom: 2px solid rgb(255, 255, 255);
-    }
-    .nav-link{
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-    .active{
-        border-bottom: 2px solid rgb(255, 255, 255);
-    }
-    .mr .active > .nav-link{
-        color:white;
-        font-weight: 500;
-    }
-    
-    .navbar-nav  .btn{
-        padding: 10px 20px;
-        border:none;
-        font-weight: 500;
-        transition-duration: 300ms;
-    }
-    .navbar-nav  .btn:hover{
-        transition-duration: 300ms;
-        font-weight: 500;
-    }
-    .mr{
-        margin-right:8%;
+    iframe{
+        width: 550px;
+        height: 350px;
     }
     
     .landing_page .landing_page_content-1{
@@ -478,6 +677,45 @@
 /* Large screens ----------- */
 @media only screen  and (min-width : 1824px) {
     /* Styles */
+
+    .heading h2{
+        width: 80%;
+        margin-top: 18rem;
+        font-weight: 700;
+        font-size: 3.7rem;
+        color:white;
+        text-transform: capitalize;
+        margin-left: 5rem;
+    }
+    .heading button{
+        margin-left:5rem;
+        margin-top:3rem;
+        border-radius: 26px;
+        padding:15px 28px;
+        color:white;
+        background-image: linear-gradient(to right, #6b49ff,#7d5fff);
+        font-size: 1rem;
+    }
+    .heading .btn:hover{
+        cursor: pointer;
+        color:seashell;
+    }
+    .bg-icon img{
+        margin-top: 10rem;
+        padding-left:4rem;
+        width:100%;
+        height: auto;
+        max-width: 500px;
+    }
+
+    .body{
+        margin-top:90%;
+    }
+
+    iframe{
+        width: 550px;
+        height: 350px;
+    }
 }
 
 /* iPads (landscape) ----------- */

@@ -7,7 +7,7 @@
 {% block body %}
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" >
       <div class="instructions-container">
         <h5>
           * Instructions
@@ -164,28 +164,30 @@
           <input type="url" placeholder="example.com/img" id ="url" class="form-control" />
         </div>
     
-        <div class="form-group total-cost text-center p-2 border">
-          <table class="summary">
+        <div class="form-group total-cost table-responsive  ">
+          <table class="summary table">
             <thead>
               <tr>
-                <td><p>WeekDays</p></td>
-                <td><p>Weekend Days</p></td>
-                <td><p>Professional Content</p></td>
-                <td><p>Total Cost</p></td>
+                <th scope="col">Id </th>
+                <th scope="col"><p>WeekDays</p></th>
+                <th scope="col"><p>Weekend Days</p></th>
+                <th scope="col"><p>Professional Content</p></th>
+                <th scope="col"><p>Total Cost</p></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><p>{{weekdays}}</p></td>
-                <td><p>{{weekends}}</p></td>
-                <td><p>{{Pro_content}}</p></td>
-                <td><p>{{cost}}$</p></td>
+                <th scope="row" >1</th>
+                <td><p id="weekdays"></p></td>
+                <td><p id="weekend_days" ></p></td>
+                <td><p id="procontent"></p></td>
+                <td><p id="totalcost"></p><span>$</span></td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="form-group submit-btn text-right">
-          <button class="btn btn-secondary " id="campaign_submit">Submit</button>
+          <button class="btn border" id="campaign_submit">Submit</button>
         </div>
     </div>
 

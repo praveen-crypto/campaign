@@ -7,7 +7,6 @@
     <link rel="icon" href="{{ url_for( 'static', filename='assets/logo.png' ) }}" type="image/png" sizes="10x10">
 
     <!-- RESPONSIVE AND STYLE CSS -->
-    <link rel="stylesheet" href = "{{ url_for( 'static', filename='css/style.css' ) }}">
     <link rel="stylesheet" href = "{{ url_for( 'static', filename='css/responsive.css' ) }}">
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -49,21 +48,21 @@
                 <a class="nav-link {{about}}"" href="{{ url_for('about') }}">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{contact_us}}" href="#contactus-footer">Contact Us</a>
+                <a class="nav-link {{contact_us}}" href="/home#contactus-footer">Contact Us</a>
             </li>
           </ul>
           <ul class="navbar-nav sec2">
-            {% if session['id'] == '' %}
-            <li class="nav-item">
-              <a href="{{ url_for('signin') }}"  ><div class="btn btn-primary">SIGN IN</div></a>
-            </li>
-            {% else %}
+            {% if 'loggedin' in session: %}
             <li class="nav-item">
               <a  href="#" class="nav-link username">{{ session['username'] }}</a>
             </li>
             <li class="nav-item" >
               <a href="{{ url_for('signout') }}" class="nav-link" id="signout" ><div class="signout">Sign Out</div></a>
-            </li>            
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a href="{{ url_for('signin') }}"  ><div class="btn btn-primary">SIGN IN</div></a>
+            </li>
             {% endif %}
           </ul>
         </div>

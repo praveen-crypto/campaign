@@ -16,38 +16,63 @@ def signin():
         res = views.signin(request)
         if res:
             userid = session['id']
-            return render_template('common/monitor.html', monitor="active", userid = userid)
-        return res
-    elif(request.method=="GET"):
-        if session['id'] == '':
-            print("session id1:",session['id'])
-            return render_template('auth/sign_in.html' )
+            message,status = "OK", 200
+            return jsonify(message, status)
         else:
-            print("session id2:",session['id'])
-            return render_template('common/monitor.html', monitor="active")
+            message,status = "FAILED", 200
+            return jsonify(message, status)
+        
+    elif(request.method=="GET"):
+        if 'loggedin' in session:
+            return redirect(url_for('home'))
+        else:
+            return render_template('auth/sign_in.html' )
+            
+            
 
 @app.route('/signout', methods=['GET'])
 def signout():
-    pass
-
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('username', None)
+    print('session:',session)
+    return redirect(url_for('home'))
 
 @app.route('/signup', methods=['GET', 'POST'])
-def register():
+def signup():
     if (request.method=="POST"):
         return True
-    elif(request.method=="GET"):   
-        return render_template('auth/sign_up.html' )
+    elif(request.method=="GET"):
+        if 'loggedin' in session:
+            return redirect(url_for('home'))
+        else: 
+            return render_template('auth/sign_up.html' )
+
+
+@app.route('/verify_email', methods=['GET', 'POST'])
+def verify_email():
+    if (request.method=="POST"):
+        res = views.verify_email(request)
+        return res
+
+    elif(request.method=="GET"):
+        return redirect(url_for('home'))
+
+
+@app.route('/verify_otp')
+def verify_otp():
+    return render_template('auth/verify_otp.html')
+
 
 
 # =================================GENERAL ROUTING
 @app.route('/')
 @app.route('/home')
 def home():
-    if session['id'] == '':
-        return render_template('common/landing_page.html', home="active")
-    else:
-        return render_template('common/monitor.html', monitor="active")
-
+    link = views.get_current_campaign()
+    print(link)
+    return render_template('common/landing_page.html', home="active", links = link)
+   
 @app.route('/monitor')
 def monitor():
     return render_template('common/monitor.html', monitor="active")

@@ -1,8 +1,3 @@
-*{
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
 
 @media only screen and (min-width : 360px){
     .logo{
@@ -10,59 +5,55 @@
         height: auto;
         max-width: 50px;
     }
-nav{
-    background-image: linear-gradient(to bottom, #743ff9, #9166f5);
-    position: relative;
-    z-index: 2;
-}
-nav > .container-fluid{
-    padding-top: 0rem;
-}
-
-.nav-item{
-    margin-left:0.8rem;
-    margin-right: 0.8rem;
-}
-
-.navbar-nav{
-    margin-top: 1rem;
-}
-.navbar-nav  .btn{
-    padding: 7px 16px;
-    border:none;
-    background-color: rgb(255, 255, 255);
-    font-weight: 500;
-    color:#846afe;
-    transition-duration: 300ms;
-}
-.mr{
-    margin-right:8%;
-}
-.nav-link{
-    color: rgba(255, 255, 255, 0.6);
-}
-.nav-link:hover{
-    color: rgba(255, 255, 255, 0.6);
-}
-.sec2{
-    border-top:1px solid rgba(255, 255, 255, 0.3)
-}
+    nav{
+        background-image: linear-gradient(to bottom, #743ff9, #9166f5);
+        z-index: 2;
+    }
+    nav > .container-fluid{
+        padding-top: 0rem;
+    }
+    .nav-item{
+        margin-left:0.8rem;
+        margin-right: 0.8rem;
+    }
+    .navbar-nav{
+        margin-top: 1rem;
+    }
+    .navbar-nav  .btn{
+        padding: 7px 16px;
+        border:none;
+        background-color: rgb(255, 255, 255);
+        font-weight: 500;
+        color:#846afe;
+        transition-duration: 300ms;
+    }
+    .mr{
+        margin-right:8%;
+    }
+    .nav-link,
+    .nav-link:hover{
+        color: rgba(255, 255, 255, 0.6);
+    }
+    .sec2{
+        border-top:1px solid rgba(255, 255, 255, 0.3)
+    }
 
 }
 
 @media only screen and (min-width : 1024px){
 
-    .sec2{
-        border:none;
-    }
     nav{
         background:transparent;
     }
-    
+    .navbar .container-fluid{
+        padding-top:0.5rem;
+    }
     .navbar-nav{
-        margin-top: 0rem;
+        margin-top:0rem;
     }
     .nav-link{
+        text-transform: uppercase;
+        font-weight: 400;
         color: rgba(255, 255, 255, 0.6);
     }
     .nav-link:hover{
@@ -81,12 +72,23 @@ nav > .container-fluid{
         font-weight: 500;
         border: 1px solid rgb(255, 255, 255);
         background-color: rgba(21, 21, 21, 0);
+        color:white;
     }
     .mr{
         margin-right:8%;
     }
+    .mr .nav-item:hover{
+        border-bottom: 2px solid rgb(255, 255, 255);
+    }
+    .active{
+        border-bottom: 2px solid rgb(255, 255, 255);
+    }
+    .mr .active > .nav-link{
+        color:white;
+        font-weight: 500;
+    }
     .sec2{
-        border-top:none;
+        border:none;
     }
 
 
