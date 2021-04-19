@@ -10,6 +10,96 @@
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (min-width : 360px) and (orientation: portrait) {
+    .landing_page_content-1 h2{
+        width:80vw;
+        padding:0;
+        margin-top:12rem;
+        margin-left:-1rem;
+        font-size: 2rem;
+    }
+    .bg-icon{
+        display: none;
+    }
+    .landing_page .landing_page_content-1{
+        position:absolute;
+        top:0px;
+        left: 15px;
+        background: url('../assets/bg-landing-page.png') center bottom no-repeat;
+        background-size: cover;  
+        height: 700px;
+        width: 100%;  
+        color:white;
+        
+    }
+    .heading button{
+        margin-top:3rem;
+        margin-left:-1rem;
+        border-radius: 26px;
+        width:40vw;
+        color:white;
+        background-image: linear-gradient(to right, #6b49ff,#7d5fff);
+        font-size: 1rem;
+    }
+    .body{
+        margin-top:45rem;
+        
+    }
+    
+
+    /* SERVICES */
+    .our-services{
+        margin:3rem auto; 
+        padding-bottom: 4rem;               
+    }
+    .our-services-head{
+        width: 100%;
+    }
+    .card{
+        margin-top: 2.5rem;
+        padding:0rem 5rem;
+    }
+    .card-body{
+        margin-top: 1rem;
+    }
+    .card-img-top{
+        width:100%;
+        height: auto;
+        max-width:100px;
+        display: flex;
+        align-self: center;
+    }
+    .card .btn{
+        background-color:transparent;
+        color:rgba(128, 128, 128, 0.7);
+        border:none;
+
+    }
+    .card .btn:active{
+        background-color:transparent;
+        color:rgba(128, 128, 128, 0.7);
+        border:none;
+    }
+
+
+
+    /*CAMPAIGN STYLE*/
+.instructions-container{
+    border:1px solid rgba(0, 0, 0, 0.1);
+    margin:2rem 0;
+    padding: 0.5rem;
+}
+.instructions-container h5{
+    margin:1rem auto;
+}
+.instructions-container ul{
+    width:100%;
+    margin-left: 1rem;
+    padding:0.5rem;
+    font-size: 0.8rem;
+}
+
+
+
 
 }
 
@@ -66,7 +156,9 @@
     .mr{
         margin-right:8%;
     }
-    
+    .bg-icon{
+        display: block;
+    }
     .landing_page .landing_page_content-1{
         position:absolute;
         top:0px;
@@ -314,7 +406,9 @@
     }
 
 
-    /*CAMPAIGN STYLE*/
+    /*PAGE CAMPAIGN STYLE*/
+
+
 
     /*FOOTER STYLE*/
     footer{
