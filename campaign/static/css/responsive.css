@@ -5,11 +5,12 @@
     --border-color:rgb(255,255,255,0.05);
     --bg-color: rgb(21,21,21);
     --sub-font: rgba(255,255,255,0.4);
+    --navbar: background-image: linear-gradient(to bottom, #743ff9, #9166f5);
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (min-width : 360px) and (orientation: portrait) {
-        
+
 }
 
 @media only screen and (min-width : 420px) and (orientation: portrait) {
@@ -104,21 +105,16 @@
         height: auto;
         max-width: 500px;
     }
-
     .body{
         margin-top:90%;
-        background-color: rgb(253, 253, 253);
+        
     }
-    
-
-
     .space_for_ads{
         margin-top: 0%;
        
         height: 50vh;
     }
     
-
     /* SERVICES */
     .our-services{
         margin:3rem auto; 
@@ -289,14 +285,10 @@
 
     .body{
         margin-top:90%;
-        background-color: rgb(253, 253, 253);
     }
-    
-
 
     .space_for_ads{
         margin-top: 0%;
-       
         height: 50vh;
     }
     
@@ -321,13 +313,16 @@
         align-self: center;
     }
 
+
+    /*CAMPAIGN STYLE*/
+
+    /*FOOTER STYLE*/
     footer{
         overflow: hidden;
         position: relative;
         margin-top: 9rem;
         width: 100%;
-    }
-    
+    }    
 
     .footer-contact-us{
         padding: 8rem 0;

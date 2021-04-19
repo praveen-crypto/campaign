@@ -13,7 +13,7 @@
             <h2>
                 digital campaign for digital world
             </h2>
-            <a href="#"><button class="btn">Know More</button></a>
+            <a href="{{url_for('about')}}"><button class="btn">Know More</button></a>
         </div>
         <div class="col-6 bg-icon">
             <img src="{{ url_for('static', filename='assets/bg-icon.png') }}" alt="">
@@ -23,23 +23,16 @@
     <div class="body">
         <div class="row space_for_ads ">
             <div class="col ">
-                Space for ads
-            </div>
-        </div>
-    
-        <div class="row landing_page_content-2 about_us">
-            <div class="col-6">
                 
             </div>
-            <div class="col-6">
+        </div>
+        
+        <div class="row  space_for_ads">
+            <div class="col">
 
             </div>
         </div>
-
-        <div class="row  space_for_ads">
-
-        </div>
-
+        
         <div class="row landing_page_content-3 our_services">
             <div class="col-12 our-services-head text-center">
                 <h6>Our Services</h6>
@@ -95,7 +88,7 @@
 
 
 </div>
-<div class="container-fluid m-0 p-0">
+<div class="container-fluid m-0 p-0" id="contactus-footer">
     {% include 'common/footer.html' %}   
 </div>
 

@@ -26,6 +26,10 @@ def signin():
             print("session id2:",session['id'])
             return render_template('common/monitor.html', monitor="active")
 
+@app.route('/signout', methods=['GET'])
+def signout():
+    pass
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def register():
@@ -35,17 +39,14 @@ def register():
         return render_template('auth/sign_up.html' )
 
 
-
-
-
-
 # =================================GENERAL ROUTING
 @app.route('/')
 @app.route('/home')
 def home():
-    
-    return render_template('common/landing_page.html', home="active")
-
+    if session['id'] == '':
+        return render_template('common/landing_page.html', home="active")
+    else:
+        return render_template('common/monitor.html', monitor="active")
 
 @app.route('/monitor')
 def monitor():
@@ -63,11 +64,6 @@ def campaign():
 def about():
     return render_template('common/about.html', about="active")
 
-@app.route('/contact_us')
-def contact_us():
-    return render_template('common/contact_us.html', contact_us="active")
-
-
 # ===========================FOR TESTING PURPOSE
 @app.route('/test')
 def test():
@@ -76,9 +72,9 @@ def test():
 
        return rv
     else:
-
-        rv =  mail.send()
-        print(rv)
-        return str(rv)
+        return render_template('common/landing_page.html', home="active")
+        #rv =  mail.send()
+        #print(rv)
+        
 
 
