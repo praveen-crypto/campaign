@@ -75,14 +75,6 @@ $('.calendar').change( () => {
 });
 
 
-
-
-
-
-
-
-
-
 // ------------------------GET AND POST METHODS
 function AJAXPromise(method, URL) {
     let data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
@@ -117,7 +109,6 @@ function AJAXPromise(method, URL) {
 }
 
 
-
 //  ------------------ AUTHENTICATION API'S
 $('#signin_submit').click( () => {
     
@@ -147,13 +138,12 @@ $('#signin_submit').click( () => {
     });
 });
 
+
 $('#signup_submit').click( () => {
     let username = $('#signup_username').val();
     let email =  $('#signup_email').val();
     let password = $('#signup_password').val();
     
-    console.log(username,email,password);
-
     if (username == '' || email == '' || password == ''){
         window.alert('Enter all credentials!!');
     }
@@ -161,46 +151,23 @@ $('#signup_submit').click( () => {
     let info = { 'username':username, 'email':email, 'password':password }
     var data = { 'data': JSON.stringify(info) };
 
-    console.log(data);
-
-    AJAXPromise("POST", "/verify_email", data).then( (success_data) => {
-        if ( success_data.message == 'OK'){
-            alert('success');
-            window.location.href('/verify_otp')
+    AJAXPromise("POST", "/signup", data).then( (success_data) => {
+        console.log("message:", success_data);
+        
+        if ( success_data[0] == 'OK' ){
+            alert('Successfully Registered');
+            window.location.replace('/home')
         }
-        else {
-            console.log("message:", success_data);
-            alert('FAILED');
+        else{
+            console.log("message:", success_data)
+            alert('Failed');
         }
     },(error)=>
     {
       alert(JSON.stringify(error["responseJSON"],null, 1));
     });
-    
-    //AJAXPromise("POST", "/signup", data).then( (success_data) => {
-    //    console.log("message:", success_data)
-    //    if ( success_data[0] == 'OK'){
-    //        alert('');
-    //        window.location.replace('/signin')
-    //    }
-    //    else {
-    //        console.log("message:", success_data)
-    //        alert('Incorrect Email or Password');
-    //    }
-    //},(error)=>
-    //{
-    //  alert(JSON.stringify(error["responseJSON"],null, 1));
-    //});
+
 });
-
-
-
-
-
-
-
-
-
 
 
 //---------------------FUNCTION FOR CREATING NEW CAMPAIGN

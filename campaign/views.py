@@ -68,6 +68,28 @@ def signin(request):
         message, status = "SERVER ERROR", 500
         return jsonify(message, status)
 
+def signup(request):
+    try:
+        if request.method != "POST":
+            return "BAD REQUEST"
+
+        dat = []
+        da = request.form.get('data')
+        da = json.loads(da)
+        for i in da.values():
+            dat.append(i)
+        data = tuple(dat)
+        account = database.signup(data)
+        if account:
+            message,status = "OK", 200
+            return jsonify(message, status)
+        else:
+            message,status = "FAILED", 200
+            return jsonify(message, status)
+    except Exception as e:
+        print(e)
+        message, status = "SERVER ERROR", 500
+        return jsonify(message, status)
 
 def verify_email(request):
     try:

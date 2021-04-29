@@ -452,8 +452,21 @@
 
 
 
+    /*ABOUT PAGE STYLE SHEETS*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+    /*FOOTER STYLE SHEETS*/
     footer{
         overflow: hidden;
         position: relative;
@@ -606,6 +619,44 @@
 
 
     /*PAGE CAMPAIGN STYLE*/
+
+    
+
+    
+
+
+
+
+    /*ABOUT STYLE*/
+    .aboutus{
+        margin:7rem auto;
+    }
+    .about-container{
+        padding:3rem 2rem;
+    }
+    .about-container h4{
+        font-family: 'Allerta Stencil';
+    }
+    .about-container p{
+        width: 70%;
+        text-align: justify;
+        margin-top:2rem;
+        font-family: 'Roboto';
+        font-weight: 300;
+        word-spacing: 0.6rem;
+        margin-bottom: 3rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

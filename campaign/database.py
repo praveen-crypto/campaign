@@ -75,6 +75,22 @@ def signin(data):
         if connection:
             connection.close()
 
+def signup(data):
+    try:
+        connection  = connector()
+        cursor = connection.cursor()
+        columns = "username,email,password"
+        values = data
+        sql = "insert into userdetail({}) values(%s,%s,%s)".format(columns)
+        cursor.execute(sql,values)
+        connection.commit()
+        return True
+    except Exception as e:
+        print(e)
+        return None
+    finally:
+        if connection:
+            connection.close()
 
 def register(data):
     try:
@@ -93,7 +109,6 @@ def register(data):
     finally:
         if connection:
             connection.close()
-
 
 def get_current_campaign():
     try:
@@ -116,7 +131,6 @@ def get_current_campaign():
     finally:
         if connection:
             connection.close()
-
 
 def verify_otp(data):
     try:

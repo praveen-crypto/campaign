@@ -27,7 +27,7 @@ def signin():
             return redirect(url_for('home'))
         else:
             return render_template('auth/sign_in.html' )
-            
+
             
 
 @app.route('/signout', methods=['GET'])
@@ -38,30 +38,17 @@ def signout():
     print('session:',session)
     return redirect(url_for('home'))
 
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if (request.method=="POST"):
-        return True
+        res = views.signup(request)
+        return res
     elif(request.method=="GET"):
         if 'loggedin' in session:
             return redirect(url_for('home'))
         else: 
             return render_template('auth/sign_up.html' )
-
-
-@app.route('/verify_email', methods=['GET', 'POST'])
-def verify_email():
-    if (request.method=="POST"):
-        res = views.verify_email(request)
-        return res
-
-    elif(request.method=="GET"):
-        return redirect(url_for('home'))
-
-
-@app.route('/verify_otp')
-def verify_otp():
-    return render_template('auth/verify_otp.html')
 
 
 
@@ -72,7 +59,7 @@ def home():
     link = views.get_current_campaign()
     print(link)
     return render_template('common/landing_page.html', home="active", links = link)
-   
+
 @app.route('/monitor')
 def monitor():
     return render_template('common/monitor.html', monitor="active")
